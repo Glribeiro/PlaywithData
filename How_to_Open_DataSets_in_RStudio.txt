@@ -7,6 +7,8 @@ OBJECT_NAME <- read.csv("NAME_OF_FILE_DIRECTORY", header = TRUE, sep = ",", stri
 # header = TRUE if you want to show the first line of yout dataset
 # sep = "\t" - you define your DataSet's separator
 # head(OBJECT_NAME, 4) - show the first 4 lines of your dataset - after creating the object, it will help you with the first impression of the data
+# tail(OBJECT_NAME, 4) - show de last lines of your dataset
+# str(OBJECT_NAME) - very important, you can see the structure of your dataset
 # obs: read.table - reads a file in table format and creates a data frame from it
 # NA = not available, if there are missing values in your dataset
 # strings.na = "N/A" you especify you want N/A in the fields with NO values
