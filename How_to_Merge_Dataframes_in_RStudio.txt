@@ -1,0 +1,38 @@
+- 1) Merge Dataframes
+
+A <- data.frame(id = c("A", "B", "C", "D"), age = c(24, 25, 17, 19), height = c(1.8, 
+                                                                                1.9, 1.75, 1.65))
+B <- data.frame(gender = c("M", "M", "F", "F"), id = c("A", "B", "C", "D"))
+
+C <- data.frame(id = c("A", "B", "C", "D"), math = c(6.5, 8.9, 7.4, 9.2), science = c(7.2, 
+                                                                                      8.4, 6.5, 8.7))
+D <- data.frame(id = c("A", "B", "C", "D"), eyes = c("blue", "brown", "green", 
+                                                     "black"))
+
+# Merging:
+AB <- merge(A, B)  # A+B
+ABC <- merge(AB, C)  # AB + C
+ABCD <- merge(ABC, D)  # ABC + D
+
+
+# Easy way to do this process:
+
+reduce(merge, list(A, B, C, D))
+
+
+- 2) Join (rbind and cbind)
+
+# To join two data frames (datasets) vertically.
+
+d <- data.frame(a=sample(-100:0,10),b=sample(150:200,10))
+
+e <- data.frame(a=sample(-100:0,10),b=sample(150:200,10))
+
+b1 <- rbind(d,e)
+
+f <- data.frame(a=sample(-100:0,10),b=sample(150:200,10))
+
+g <- data.frame(c=sample(-100:0,10),d=sample(150:200,10))
+
+b2 <- cbind(f,g)
+
