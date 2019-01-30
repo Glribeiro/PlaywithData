@@ -1,0 +1,62 @@
+- 1) CSV
+
+OBJECT_NAME <- read.csv("NAME_OF_FILE_DIRECTORY", header = TRUE, sep = ",", strings.na = "N/A", stringsAsFactors = FALSE) 
+
+# OBJECT_NAME - the name you want to use to store the dataset as a object in R
+# NAME_OF_FILE_DIRECTORY - file directory in your computer. Before this you need to define a Work Directory to your files in R - command: setwd()
+# header = TRUE if you want to show the first line of yout dataset
+# sep = "\t" - you define your DataSet's separator
+# head(OBJECT_NAME, 4) - show the first 4 lines of your dataset - after creating the object, it will help you with the first impression of the data
+# obs: read.table - reads a file in table format and creates a data frame from it
+# NA = not available, if there are missing values in your dataset
+# strings.na = "N/A" you especify you want N/A in the fields with NO values
+# stringsAsFactors = FALSE - to let them as strings
+# Data from Internet: OBJECT_NAME2 <- read.csv("https://github.com/.../xxx.csv") 
+
+
+- 2) HTML
+
+install.packages("XML") # install packet XML
+library(XML)
+
+OBJECT_NAME3 <- "xxx.html"
+tables <- readHTMLTable(OBJECT_NAME3) # to create tables
+
+
+- 3) XML
+
+install.packages("XML") 
+library(XML)
+OBJECT_NAME4 <- "xxx.xml"
+
+xmldoc <- xmlParse(url) # XMLInternalDocument
+rootnode <- xmlRoot(xmldoc)
+rootnode[1] # consult the first element
+
+
+- 4) JSON
+
+install.packages("jsonlite")
+library(jsonlite)
+
+OBJECT_NAME5 <- fromJSON("xxxx.json") # load file
+
+
+- 5) ANALISIS FWF
+
+# fwf - fixed with format 
+
+OBJECT_NAME6 <- read.fwf("xxxx.txt", 
+                          widths = c(4, 15, 20, 15, 4), 
+                          col.names = c("id", "nombre", "email", "carrera", "aÃ±o")) 
+						  
+# widths - dataframe with 5 columns
+# col.names - columns names
+
+# another case with header:
+
+OBJECT_NAME7 <- read.fwf("xxxx.txt", 
+                                 widths = c(4, 15, 20, 15, 4), 
+                                 header = TRUE, sep = "\t", skip = 2)
+# if the data starts on line 3, you use skip to jump to
+
